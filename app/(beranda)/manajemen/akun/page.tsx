@@ -72,7 +72,7 @@ export default function ManajemenAkun() {
             className="border border-gray-200 p-2 rounded-lg w-72 text-sm focus:outline-blue-500"
           />
           <div className="space-x-2">
-            <Link href="/daftar-akun">
+            <Link href="/daftar-akun-himpunan">
               <button className="bg-black text-white px-6 py-2 rounded-lg text-sm font-semibold hover:bg-gray-800 transition">
                 Tambah Akun +
               </button>
