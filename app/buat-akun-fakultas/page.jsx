@@ -1,15 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import FormInput from "../components/akun-prodi/form-input";
-import FormSelect from "../components/akun-prodi/form-select";
-import LogoUpload from "../components/akun-prodi/logo-upload";
+import InputFakultas from "../components/akun-fakultas/input-fakultas";
+import LogoFakultas from "../components/akun-fakultas/Logo-fakultas"
 
 export default function BuatAkunProdi() {
-
-    // Untuk isi nama kampus dan fakultas
-    const daftarKampus = ["Telkom University", "Telkom University", "Telkom University"];
-    const daftarFakultas = ["Fakulltas Informatika", "Fakultas Ekonomi dan Bisnis", "Fakultas Teknik Elektro"];
-
     return (
         <div className="min-h-screen w-full flex flex-col items-center justify-center py-20 overflow-hidden"
              style={{
@@ -33,13 +27,13 @@ export default function BuatAkunProdi() {
 
             <div className="mb-10 text-center">
                 <h1 className="text-[32px] font-semibold leading-[32px] text-[#1D1D1D]">
-                    Buat Akun Prodi
+                    Buat Data Fakultas
                 </h1>
-                <p className="text-[#068DFF] text-sm mt-2">Buatkan Akun Prodi</p>
+                <p className="text-[#068DFF] text-sm mt-2">Buatkan Akun Fakultas</p>
             </div>
 
              {/* Untuk frame box putih */}
-            <div className="w-full max-w-[1055px] min-h-[606px] p-[18px] rounded-[8px] flex flex-col items-center gap-[32px] shadow-xl"
+            <div className="w-full max-w-[1055px] min-h-[512px] p-[18px] rounded-[8px] flex flex-col items-center gap-[32px] shadow-xl"
                  style={{ 
                      background: "linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, #FFFFFF 100%)" 
                  }}>
@@ -49,14 +43,11 @@ export default function BuatAkunProdi() {
                 </h3>
 
                 <div className="grid grid-cols-2 gap-x-8 gap-y-6 w-full max-w-[1019px]">
-                    <FormSelect label="Nama Universitas" placeholder="Pilih universitas" options={daftarKampus}/>
-                    <FormSelect label="Fakultas" placeholder="Pilih Universitas" options={daftarFakultas}/>
-
-                    <FormInput label="Program Studi" placeholder="Masukkan nama prodi"/>
-                    <FormInput label="Nama Organisasi Himpunan" placeholder="Masukkan nama organisasi" />
+                    <InputFakultas label="Nama Universitas" placeholder="Pilih universitas"/>
+                    <InputFakultas label="Fakultas" placeholder="Pilih Universitas"/>
                 </div>
                 
-                <LogoUpload label="Logo Himpunan"/>
+                <LogoFakultas label="Logo Fakultas"/>
 
                 <div className="w-[1019px] flex justify-end">
                     <button className="w-[264px] h-[54px] bg-[#068DFF] text-white rounded-[4px] font-bold text-[16px] hover:bg-blue-600 transition-all shadow-md">
