@@ -10,14 +10,14 @@ export default function FormSelect({ label, placeholder, options = [] }) {
       <div className="relative">
         <select
           defaultValue=""
-          className="w-full h-[45px] px-[12px] bg-white border border-[#E6E6E6] rounded-[4px] shadow-[0px_2px_8px_rgba(6,141,255,0.08)] text-[14px] text-[#1D1D1D] outline-none focus:border-[#068DFF] cursor-pointer appearance-none transition-all invalid:text-[#9A999A]"
+          className="w-full h-[45px] px-[12px] bg-white border border-[#E6E6E6] rounded-[4px] shadow-[0px_2px_8px_rgba(6,141,255,0.08)] text-[14px] text-[#0F0F0F] outline-none focus:border-[#068DFF] cursor-pointer appearance-none transition-all invalid:text-[#636363]"
           required
         >
           <option value="" disabled hidden>
             {placeholder}
           </option>
           {options.map((opt, index) => (
-            <option key={index} value={opt} className="text-black">
+            <option key={index} value={opt} className="text-[#0F0F0F]">
               {opt}
             </option>
           ))}
@@ -34,7 +34,7 @@ export default function FormSelect({ label, placeholder, options = [] }) {
           >
             <path 
               d="M1 1L6 6L11 1" 
-              stroke="#1D1D1D" 
+              stroke="#0F0F0F" 
               strokeWidth="2" 
               strokeLinecap="round" 
               strokeLinejoin="round"

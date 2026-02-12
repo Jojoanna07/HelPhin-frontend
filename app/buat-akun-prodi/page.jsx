@@ -2,9 +2,11 @@ import React from "react";
 import Image from "next/image";
 import FormInput from "../components/form-input";
 import FormSelect from "../components/form-select";
+import LogoUpload from "../components/logo-upload";
 
 export default function BuatAkunProdi() {
 
+    // Untuk isi nama kampus dan fakultas
     const daftarKampus = ["Telkom University", "Telkom University", "Telkom University"];
     const daftarFakultas = ["Fakulltas Informatika", "Fakultas Ekonomi dan Bisnis", "Fakultas Teknik Elektro"];
 
@@ -36,6 +38,7 @@ export default function BuatAkunProdi() {
                 <p className="text-[#068DFF] text-sm mt-2">Buatkan Akun Prodi</p>
             </div>
 
+             {/* Untuk frame box putih */}
             <div className="w-full max-w-[1055px] min-h-[606px] p-[18px] rounded-[8px] flex flex-col items-center gap-[32px] shadow-xl"
                  style={{ 
                      background: "linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, #FFFFFF 100%)" 
@@ -53,7 +56,13 @@ export default function BuatAkunProdi() {
                     <FormInput label="Nama Organisasi Himpunan" placeholder="Masukkan nama organisasi" />
                 </div>
                 
-                {/* Nanti di bawah sini kita masukkan area Upload Logo Himpunan */}
+                <LogoUpload label="Logo Himpunan"/>
+
+                <div className="w-[1019px] flex justify-end">
+                    <button className="w-[264px] h-[54px] bg-[#068DFF] text-white rounded-[4px] font-bold text-[16px] hover:bg-blue-600 transition-all shadow-md">
+                        Simpan
+                    </button>
+                </div>
             </div>
         </div>
     );

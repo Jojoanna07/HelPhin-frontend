@@ -12,7 +12,7 @@ export default function FormInput({label, placeholder}) {
             type="text"
             placeholder={placeholder}
             // Ubah bagian tag <input> atau <select> menjadi:
-            className="w-full h-[45px] px-[12px] py-[14px] bg-white border border-[#E6E6E6] rounded-[4px] shadow-[0px_2px_8px_rgba(6,141,255,0.08)] text-[14px] text-[#1D1D1D] placeholder:text-[#9A999A] outline-none focus:border-[#068DFF] transition-all font-normal"/>
+            className="w-full h-[45px] px-[12px] py-[14px] bg-white border border-[#E6E6E6] rounded-[4px] shadow-[0px_2px_8px_rgba(6,141,255,0.08)] text-[14px] text-[#1D1D1D] placeholder:text-[#636363] outline-none focus:border-[#068DFF] transition-all font-normal"/>
         </div>
     );
 }
