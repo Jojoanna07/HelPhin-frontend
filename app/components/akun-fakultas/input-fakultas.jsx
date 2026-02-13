@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-export default function FormInput({label, placeholder}) {
+export default function InputFakultas({label, placeholder}) {
     return (
         <div className = "flex flex-col gap 1.5 w-full mb-4">
             <label className="text-sm font-bold text-gray-900">

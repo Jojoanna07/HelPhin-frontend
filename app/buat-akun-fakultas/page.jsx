@@ -1,9 +1,31 @@
-import React from "react";
+'use client';
+import React, { useState } from "react";
 import Image from "next/image";
 import InputFakultas from "../components/akun-fakultas/input-fakultas";
-import LogoFakultas from "../components/akun-fakultas/Logo-fakultas"
+import LogoFakultas from "../components/akun-fakultas/Logo-fakultas";
 
-export default function BuatAkunProdi() {
+export default function BuatAkunFakultas() {
+    const [namaUniversitas, setNamaUniversitas] = useState("");
+    const [namaFakultas, setNamaFakultas] = useState("");
+    const [logoBase64, setLogoBase64] = useState(null);
+
+    const handleSimpan = () => {
+        if (!namaUniversitas || !namaFakultas || !logoBase64) {
+            alert("Harap isi semua data termasuk logo!");
+            return;
+        }
+        const dataBaru = {
+            universitas: namaUniversitas,
+            fakultas: namaFakultas,
+            logo: logoBase64,
+            id: Date.now()
+        };
+        const dataLama = JSON.parse(localStorage.getItem('helphin_admin_data') || '[]');
+        localStorage.setItem('helphin_admin_data', JSON.stringify([...dataLama, dataBaru]));
+        alert("Data Fakultas Berhasil Disimpan!");
+        window.location.reload(); 
+    };
+
     return (
         <div className="min-h-screen w-full flex flex-col items-center justify-center py-20 overflow-hidden"
              style={{
@@ -14,7 +36,7 @@ export default function BuatAkunProdi() {
                  backgroundColor: '#FCFDFF'
              }}>
 
-            {/*Logo Helphin*/}
+            {/* Logo Helphin */}
             <div className="mb-10">
                 <Image 
                     src="/images/helPhin 2.png"
@@ -32,7 +54,6 @@ export default function BuatAkunProdi() {
                 <p className="text-[#068DFF] text-sm mt-2">Buatkan Akun Fakultas</p>
             </div>
 
-             {/* Untuk frame box putih */}
             <div className="w-full max-w-[1055px] min-h-[512px] p-[18px] rounded-[8px] flex flex-col items-center gap-[32px] shadow-xl"
                  style={{ 
                      background: "linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, #FFFFFF 100%)" 
@@ -42,15 +63,30 @@ export default function BuatAkunProdi() {
                     Data Prodi
                 </h3>
 
+                {/* Grid Input */}
                 <div className="grid grid-cols-2 gap-x-8 gap-y-6 w-full max-w-[1019px]">
-                    <InputFakultas label="Nama Universitas" placeholder="Pilih universitas"/>
-                    <InputFakultas label="Fakultas" placeholder="Pilih Universitas"/>
+                    <div onInput={(e) => setNamaUniversitas(e.target.value)}>
+                        <InputFakultas label="Nama Universitas" placeholder="Pilih universitas" />
+                    </div>
+                    <div onInput={(e) => setNamaFakultas(e.target.value)}>
+                        <InputFakultas label="Fakultas" placeholder="Masukkan nama fakultas" />
+                    </div>
                 </div>
                 
-                <LogoFakultas label="Logo Fakultas"/>
+                {/* Logo Section */}
+                <div className="w-full max-w-[1019px]">
+                    <LogoFakultas 
+                        label="Logo Fakultas" 
+                        onLogoChange={(img) => setLogoBase64(img)} 
+                    />
+                </div>
 
-                <div className="w-[1019px] flex justify-end">
-                    <button className="w-[264px] h-[54px] bg-[#068DFF] text-white rounded-[4px] font-bold text-[16px] hover:bg-blue-600 transition-all shadow-md">
+                {/* Tombol Simpan */}
+                <div className="w-full max-w-[1019px] flex justify-end">
+                    <button 
+                        onClick={handleSimpan}
+                        className="w-[264px] h-[54px] bg-[#068DFF] text-white rounded-[4px] font-bold text-[16px] hover:bg-blue-600 transition-all shadow-md"
+                    >
                         Simpan
                     </button>
                 </div>
