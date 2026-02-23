@@ -13,16 +13,7 @@ export default function LoginPage() {
   };
 
   return (
-    <main className="h-screen w-screen overflow-hidden relative bg-[#0B0F19]">
-
-      {/* Background */}
-      <Image
-        src="/images/loginSuperAdmin.svg"
-        alt="background"
-        fill
-        priority
-        className="object-cover"
-      />
+    <main className="overflow-hidden relative">
 
       {/* Container */}
       <div className="relative z-10 h-full w-full flex items-center justify-end px-20">
